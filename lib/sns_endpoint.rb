@@ -23,10 +23,10 @@ module SnsEndpoint
           if sns.type == :SubscriptionConfirmation
             if SnsEndpoint.channel_list.include? json['TopicArn']
               HTTParty.get json['SubscribeURL']
-              SnsEndpoint.message_proc.call(json)
+              SnsEndpoint.subscribe_proc.call(json)
             end
           elsif sns.type == :Notification
-            SnsEndpoint.subscribe_proc.call(json)            
+            SnsEndpoint.message_proc.call(json)            
           end
         end
       end
