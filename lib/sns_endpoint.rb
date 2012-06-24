@@ -3,6 +3,7 @@ require 'bundler/setup'
 require "sns_endpoint/version"
 require 'sinatra'
 require 'json'
+require 'message'
 
 module SnsEndpoint
   
