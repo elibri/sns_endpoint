@@ -40,6 +40,8 @@ mount SnsEndpoint::Core => "/sns_endpoint"
 Use as a standalone app:
 Example script:
 ```ruby
+require 'rubygems'
+require 'sns_endpoint'
 SnsEndpoint.setup do |config|
   config.topics_list = ['first_topic', 'second_topic'] #list of topics that endpoint should respond to subscription request
   config.subscribe_proc = Proc.new { |message| p message } #proc that should be executed when subscribe request got received and responded to, passed argument is message (json object)
