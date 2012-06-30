@@ -20,8 +20,6 @@ require 'openssl'
 require 'httparty'
 
 module SnsEndpoint
-  module AWS
-    class SNS
       class MessageWasNotAuthenticError < StandardError
       end
       class Message
@@ -153,7 +151,5 @@ module SnsEndpoint
             raise StandardError, "SNS signing cert could not be retrieved after #{tries} tries.\n#{msg}"
           end
         end
-      end
-    end
   end
 end
